@@ -26,9 +26,13 @@
                         @foreach ($sections as $section)
                         <tr id="tr{{ $section->id }}">
                             <td>
+                                @if ($section->logo !== '')
                                 <img src="{{ url('/logo/' . $section->logo) }}"
                                      alt="{{ $section->name }}"
                                      class="img-thumbnail" />
+                                @else
+                                <div class="text-center align-middle h100 pt40">NO LOGO</div>
+                                @endif
                             </td>
                             <td class="w40">
                                 <b>{{ $section->name }}</b><br />
@@ -132,4 +136,6 @@ new Vue({
 
 <style>
 .w40 {width: 30%}
+.h100 {height: 100px}
+.pt40 {padding-top: 40px}
 </style>
