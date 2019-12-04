@@ -21,7 +21,6 @@
                         </div>
                     @endif
 
-
                     <table class="table">
                       <thead>
                         <tr>
@@ -32,20 +31,20 @@
                         </tr>
                       </thead>
                       <tbody>
+
                         @foreach ($users as $user)
                         <tr id="tr{{ $user->id }}">
-                        <td>{{ $user->name }}</td>
-                        <td>{{ $user->email }}</td>
-                        <td>{{ $user->updated_at }}</td>
-                        <td><a class="btn btn-secondary btn-sm" href="{{ url('user/edit/' . $user->id) }}">{{ __('Edit') }}</a>
-                        <btn-delete :user="{{ $user->id }}" ></btn-delete>
-                    </td>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->email }}</td>
+                            <td>{{ $user->updated_at }}</td>
+                            <td><a class="btn btn-secondary btn-sm" href="{{ url('user/edit/' . $user->id) }}">{{ __('Edit') }}</a>
+                            <btn-delete :user="{{ $user->id }}" ></btn-delete>
+                            </td>
                         </tr>
                         @endforeach
 
                       </tbody>
                     </table>
-
 
                     {{ $users->links() }}
 
@@ -54,7 +53,6 @@
         </div>
     </div>
 </div>
-
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -72,13 +70,9 @@
     </div>
   </div>
 </div>
-
 @endsection
 
-
-
 @push('scripts')
-<script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script>

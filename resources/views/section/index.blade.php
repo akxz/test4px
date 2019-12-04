@@ -21,7 +21,6 @@
                         </div>
                     @endif
 
-
                     <table class="table">
                       <tbody>
                         @foreach ($sections as $section)
@@ -50,7 +49,6 @@
                       </tbody>
                     </table>
 
-
                     {{ $sections->links() }}
 
                 </div>
@@ -58,7 +56,6 @@
         </div>
     </div>
 </div>
-
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -80,17 +77,14 @@
 @endsection
 
 @push('scripts')
-<script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script>
 const ConfirmDelete = Vue.component('confirm-delete', {
     template: '<button type="button" class="btn btn-primary" data-dismiss="modal"   @click="deleteSection()">{{ __('Yes') }}</button>',
-    // props: ['user'],
     methods: {
         deleteSection() {
             if (localStorage.id) {
-                // alert('DELETE ' + localStorage.id);
                 axios.delete('/section/destroy/' + localStorage.id)
                 .then(
                     (response) => { console.log(response) },

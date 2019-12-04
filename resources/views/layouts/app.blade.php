@@ -82,7 +82,8 @@
             @yield('content')
         </main>
     </div>
-    <!--script src="{{ asset('js/app.js') }}" defer></script-->
+    
+    <script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
     @stack('scripts')
 </body>
 </html>
