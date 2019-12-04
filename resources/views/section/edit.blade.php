@@ -44,8 +44,6 @@
     <span class="text-danger">{{ $errors->first('fileToUpload') }}</span>
 </div>
 
-
-
   <div class="form-group">
       <h3>{{ __('Users') }}</h3>
       @foreach($users as $user)

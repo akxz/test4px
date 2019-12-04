@@ -25,7 +25,11 @@
                       <tbody>
                         @foreach ($sections as $section)
                         <tr id="tr{{ $section->id }}">
-                            <td><img src="{{ url('/logo/' . $section->logo) }}" alt="{{ $section->name }}" /></td>
+                            <td>
+                                <img src="{{ url('/logo/' . $section->logo) }}"
+                                     alt="{{ $section->name }}"
+                                     class="img-thumbnail" />
+                            </td>
                             <td class="w40">
                                 <b>{{ $section->name }}</b><br />
                                 {{ $section->description }}
