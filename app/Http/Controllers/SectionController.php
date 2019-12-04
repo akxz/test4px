@@ -73,16 +73,23 @@ class SectionController extends Controller
         // Получаем данные
         $validated = $request->validated();
 
-        // Генерируем имя файла для изображения
-        $fileName = "img" . time() . '.' . request()->fileToUpload->getClientOriginalExtension();
-        // Сохраняем картинку в папку logo
-        $request->fileToUpload->storeAs('logo', $fileName);
+        // Проверяем наличие изображения
+        if (request()->fileToUpload) {
+            // Генерируем имя файла
+            $fileName = "img" . time() . '.' . request()->fileToUpload->getClientOriginalExtension();
+            // Сохраняем картинку в папку logo
+            $request->fileToUpload->storeAs('logo', $fileName);
+        }
 
         // Обновляем данные отдела
     	$section = Section::findOrFail($id);
         $section->name = $validated['name'];
         $section->description = $validated['description'];
-        $section->logo = $fileName;
+
+        if (isset($fileName)) {
+            $section->logo = $fileName;
+        }
+
 	    $section->save();
 
         // Пользователи отдела в БД
@@ -133,16 +140,19 @@ class SectionController extends Controller
         // Получаем данные
         $validated = $request->validated();
 
-        // Генерируем имя файла для изображения
-        $fileName = "img" . time() . '.' . request()->fileToUpload->getClientOriginalExtension();
-        // Сохраняем картинку в папку logo
-        $request->fileToUpload->storeAs('logo', $fileName);
+        // Проверяем наличие изображения
+        if (request()->fileToUpload) {
+            // Генерируем имя файла
+            $fileName = "img" . time() . '.' . request()->fileToUpload->getClientOriginalExtension();
+            // Сохраняем картинку в папку logo
+            $request->fileToUpload->storeAs('logo', $fileName);
+        }
 
         // Сохраняем отдел
     	$section = new Section;
         $section->name = $validated['name'];
         $section->description = $validated['description'];
-        $section->logo = $fileName;
+        $section->logo = (isset($fileName)) ? $fileName : '';
 	    $section->save();
 
         // Если пришел массив пользователей

@@ -26,7 +26,7 @@ class StoreSection extends FormRequest
         return [
             'name' => 'required|max:100',
             'description' => 'required|max:200',
-            'fileToUpload' => 'required|mimes:jpeg,jpg,png,gif|max:1024',
+            'fileToUpload' => 'mimes:jpeg,jpg,png,gif|max:1024',
             'users' => 'array',
         ];
     }
