@@ -32,5 +32,17 @@
     "Success updated": "Успешно обновлено",
     "Success created": "Успешно создано",
     "Successfully deleted": "Успешно удалено",
+    "E-Mail Address": "Email адрес",
+    "Remember Me": "Запомнить меня",
+    "Forgot Your Password?": "Забыли пароль?",
+    "Confirm Password": "Подтвердить пароль",
+    "Verify Your Email Address": "Проверьте Ваш email",
+    "A fresh verification link has been sent to your email address.": "Свежая ссылка отправлена Вам на электронную почту.",
+    "Before proceeding, please check your email for a verification link.": "Пожалуйста, проверьте Ваш email.",
+    "If you did not receive the email": "Если Вы не получили email",
+    "click here to request another": "кликните здесь, чтобы запросить снова",
+    "Please confirm your password before continuing.": "Пожалуйста, подтвердите Ваш пароль",
+    "Reset Password": "Сброс пароля",
+    "Send Password Reset Link": "Отправить ссылку на сброс пароля",
     "Actions": "Действия"
 }
